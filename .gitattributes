@@ -1,0 +1,13 @@
+# forzar que .gd sea GDScript
+*.gd linguist-language=GDScript
+
+# para que las escenas .tscn y .scn también cuenten como GDScript
+*.tscn linguist-language=GDScript
+*.scn linguist-language=GDScript
+
+# opcional: si tienes .shader o .gdshader
+*.shader linguist-language=GLSL
+*.gdshader linguist-language=GDScript
+
+# excluir carpetas de Godot exportadas (por ejemplo el engine en submódulo)
+vendor/godot/** linguist-vendored
