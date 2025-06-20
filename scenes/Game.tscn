@@ -1,0 +1,138 @@
+[gd_scene load_steps=9 format=3 uid="uid://dc3vbaqeqcdt0"]
+
+[ext_resource type="Shader" uid="uid://pljyetsoox3y" path="res://shaders/game.gdshader" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://dynhy18lcq6rk" path="res://scenes/Game.gd" id="1_qbsmt"]
+[ext_resource type="FontFile" uid="uid://jo7yyo1eunso" path="res://fonts/CONSOLA.TTF" id="2_cpr0p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ve7bo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpr0p"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibkli"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbsmt"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qbsmt"]
+shader = ExtResource("1_ibkli")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 5.0
+shader_parameter/roll_size = 20.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 0.0
+shader_parameter/static_noise_intensity = 0.0
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.05
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.01
+shader_parameter/vignette_opacity = 0.0
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qbsmt")
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ve7bo")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="InteriorBackGround" type="PanelContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cpr0p")
+
+[node name="Rows" type="VBoxContainer" parent="Background/MarginContainer/InteriorBackGround"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="GameInfo" type="PanelContainer" parent="Background/MarginContainer/InteriorBackGround/Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ibkli")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/MarginContainer/InteriorBackGround/Rows/GameInfo"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_cpr0p")
+bbcode_enabled = true
+text = "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#**+====+*#%@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#+==++=--=--:::=*@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##***++++=+=+*++==-=%@@@@@@%@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*##*+======--==-++=-#@@@@@@@@@@@@
+@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%**+++++=----:--:-=#@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%******+*#+##*@@@@@@@@@@@%@@@@@@@@@@@@%#*+==-------=*#@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##*#*****+++=@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%###%%@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@***********#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@****+*#*++++@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#%%%@@@@@@@@@@@#******++++*#*%##@#%@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@%@@@@@@@@@@@%@@@@@@@@#****@@@@@@@@%%@###******++*#**=*+++*=***@@@@@@@%%@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@%###%@@@@@%*#*%%%@%@@@@%###*##+*#*#***%#***+*+*+*+%@@@%%@@#+**+#*#@@@@@@%@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@%#%%@@@@@@%%@%@@@@@@@@@%%#%##***######@%#%#*#####%@@@@@@@@%#****+*@@@@@@@@@%@@@@@@@@@@@@@@@@@@
+@@@@@%@@@@@@@@@@@@%@@@%%@@@@@@@@@@@@%@@@@@@@@@@@@@@%%#***#%####*##*##*##*%#*%%#@%@@@#******@@@@@@@@@@@@@@@%%@@@@@@@@@@@@
+%%%%%%%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@%##**+*@%####*******###***##%%@@@#**+*++%%%%%%%%%%%%%%%%%@%%@@%@@@@@@
+%%%%%%%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@%%#**+*@#####**************#%@@@@#*++**+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%##***@%%%##########****%#%%%@@@%#*****%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%##*%@@@@%%%%%%%%%%%%%%%%@%@@@%##****#%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#############%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%@@@@@@@@@@%%%%@@@@@@@@@@@%%%####*%%%%###%#%#%%%%%%%%%%%%%%%%%
+##########%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%@@@@@@@@%%%%%%@@%@@@@@@%%%%%%%%%%%######################
+###%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%@@@%%%%%%@@@@@@@@%%%@@%%%@@@@%%%##%###%%%####################
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%@@@@@@@@@@@%@@@%##%##%%##@@@@%%%###############
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%@@@@@@@@@@@@@%%%%%%%%%%@@@@@@@@%%%%#########
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%@@@@@@@@@@@%@@%%%%%@@@@@@@@@@@@@@@%%%%##
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ CASTLEBORN SOFTWARE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+fffffffffffffffffffffffffffffffffffff
+
+ssffsdf
+
+ffffffffffffffffffffffffffffffff
+
+sfsfsfsf"
+scroll_following = true
+
+[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/InteriorBackGround/Rows"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qbsmt")
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+material = SubResource("ShaderMaterial_qbsmt")
+layout_mode = 2

@@ -1,0 +1,14 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1750448198
+descargar.png::CompressedTexture2D::448317417736645002::1750448198::1750448202::1::::<><><>0<>0<>99f89a66649b1e93fb354b641f0f7f36<>res://.godot/imported/descargar.png-02b23d39f73b48b5fa0b49231ba47b55.ctex::
+README.md::TextFile::-1::1750447736::0::1::::<><><>0<>0<><>::
+::res://fonts/::1750447532
+CONSOLA.TTF::FontFile::662587967496506054::1711753707::1750447532::1::::<><><>0<>0<>f21200e2a1a4baef8862a56f26729337<>res://.godot/imported/CONSOLA.TTF-cc1b889d01aaacc024ce03c58bcb6fb4.fontdata::
+CONSOLAB.TTF::FontFile::1384045817580132293::1711753707::1750447532::1::::<><><>0<>0<>a88d9dd45d61855d37113bfbe29c6f54<>res://.godot/imported/CONSOLAB.TTF-2ebe755ef23ff214c9d371aad4bc39a1.fontdata::
+CONSOLAI.TTF::FontFile::8964695467173581029::1711753745::1750447532::1::::<><><>0<>0<>40d7e68c5592f2152294f7c9851fd8be<>res://.godot/imported/CONSOLAI.TTF-ac7340a9a49b3334619b317d1b190b56.fontdata::
+CONSOLAZ.TTF::FontFile::1353141519247020031::1711753745::1750447532::1::::<><><>0<>0<>e1eb203e57c814129c03bcb4bc861f60<>res://.godot/imported/CONSOLAZ.TTF-152ce02c8b5f86fd488d67a05bba3163.fontdata::
+::res://scenes/::1750448085
+Game.tscn::PackedScene::7358719183031118779::1750448085::0::1::::<><><>0<>0<><>::uid://pljyetsoox3y::::res://shaders/game.gdshader
+::res://scripts/::1750442594
+::res://shaders/::1750447400
+game.gdshader::Shader::1076130362135567612::1750447354::0::1::::<><><>0<>0<><>::
