@@ -1,0 +1,8 @@
+; Engine configuration file format 2.25
+config_version=5
+
+[application]
+config/name="GODOTXTRETRORPG"
+run/main_scene="res://scenes/Main.tscn"
+
+[input]
