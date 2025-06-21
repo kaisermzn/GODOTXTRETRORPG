@@ -1,7 +1,5 @@
+res://scenes/InputResponse.tscn
 res://scenes/Game.tscn
 res://shaders/game.gdshader
-res://scenes/InputResponse.tscn
-res://scenes/InputResponse.gd
-res://scenes/input.gd
-res://scenes/Game.gd
-res://scenes/Response.gd
+res://commands/ICommand.gd
+res://scripts/Response.gd

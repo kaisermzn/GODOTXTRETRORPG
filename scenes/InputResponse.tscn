@@ -1,14 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://72pjvl8yoio6"]
 
-[ext_resource type="Script" uid="uid://dwtx0t45yx1e8" path="res://scenes/Response.gd" id="1_nxgtd"]
-[ext_resource type="FontFile" uid="uid://jo7yyo1eunso" path="res://fonts/CONSOLA.TTF" id="1_y7ruh"]
+[ext_resource type="FontFile" uid="uid://jo7yyo1eunso" path="res://assets/fonts/CONSOLA.TTF" id="1_nxgtd"]
+[ext_resource type="Script" uid="uid://dwtx0t45yx1e8" path="res://scripts/Response.gd" id="2_upva6"]
 
-[node name="InputResponse" type="VBoxContainer"]
-script = ExtResource("1_nxgtd")
+[node name="HistoryRows" type="VBoxContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Response" type="RichTextLabel" parent="."]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_y7ruh")
+theme_override_fonts/normal_font = ExtResource("1_nxgtd")
+bbcode_enabled = true
 text = "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#**+====+*#%@@@@@@@@@@@@@@@@
@@ -45,4 +47,5 @@ text = "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 "
-scroll_following = true
+fit_content = true
+script = ExtResource("2_upva6")
