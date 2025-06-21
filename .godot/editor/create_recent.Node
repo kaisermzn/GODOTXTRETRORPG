@@ -1,9 +1,13 @@
-ScrollContainer
 RichTextLabel
+VBoxContainer
+ScrollContainer
+PanelContainer
+LineEdit
+TextEdit
+Label
+HBoxContainer
 GraphElement
 ColorRect
-PanelContainer
 Panel
-VBoxContainer
 MarginContainer
 Control
