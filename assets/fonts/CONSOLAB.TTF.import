@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://tjqbp4ahto1l"
-path="res://.godot/imported/CONSOLAZ.TTF-152ce02c8b5f86fd488d67a05bba3163.fontdata"
+uid="uid://typbdpur37en"
+path="res://.godot/imported/CONSOLAB.TTF-cac0d3cb81ef3e26b45a091ccc6adfe9.fontdata"
 
 [deps]
 
-source_file="res://fonts/CONSOLAZ.TTF"
-dest_files=["res://.godot/imported/CONSOLAZ.TTF-152ce02c8b5f86fd488d67a05bba3163.fontdata"]
+source_file="res://assets/fonts/CONSOLAB.TTF"
+dest_files=["res://.godot/imported/CONSOLAB.TTF-cac0d3cb81ef3e26b45a091ccc6adfe9.fontdata"]
 
 [params]
 

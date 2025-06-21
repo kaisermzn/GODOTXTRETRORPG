@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d0ythvvej3swb"
-path="res://.godot/imported/CONSOLAI.TTF-ac7340a9a49b3334619b317d1b190b56.fontdata"
+path="res://.godot/imported/CONSOLAI.TTF-457b52710115aafd478857df2bc10fb0.fontdata"
 
 [deps]
 
-source_file="res://fonts/CONSOLAI.TTF"
-dest_files=["res://.godot/imported/CONSOLAI.TTF-ac7340a9a49b3334619b317d1b190b56.fontdata"]
+source_file="res://assets/fonts/CONSOLAI.TTF"
+dest_files=["res://.godot/imported/CONSOLAI.TTF-457b52710115aafd478857df2bc10fb0.fontdata"]
 
 [params]
 
