@@ -14,6 +14,10 @@ config/name="GODOTXTRETRORPG"
 run/main_scene="uid://dc3vbaqeqcdt0"
 config/features=PackedStringArray("4.4")
 
+[display]
+
+window/size/mode=3
+
 [dotnet]
 
 project/assembly_name="GODOTXTRETRORPG"

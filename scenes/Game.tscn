@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dc3vbaqeqcdt0"]
+[gd_scene load_steps=12 format=3 uid="uid://dc3vbaqeqcdt0"]
 
 [ext_resource type="Shader" uid="uid://pljyetsoox3y" path="res://shaders/game.gdshader" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://dynhy18lcq6rk" path="res://scenes/Game.gd" id="1_qbsmt"]
 [ext_resource type="FontFile" uid="uid://jo7yyo1eunso" path="res://fonts/CONSOLA.TTF" id="2_cpr0p"]
+[ext_resource type="FontFile" uid="uid://typbdpur37en" path="res://fonts/CONSOLAB.TTF" id="3_78awf"]
+[ext_resource type="Script" uid="uid://dwtx0t45yx1e8" path="res://scenes/Response.gd" id="3_aug50"]
+[ext_resource type="Script" uid="uid://qt4ljccls1rt" path="res://scenes/input.gd" id="4_s0nni"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ve7bo"]
 bg_color = Color(0, 0, 0, 1)
@@ -10,11 +13,12 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpr0p"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibkli"]
-bg_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbsmt"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0nni"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0.0383972, 0.0383972, 0.0383971, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qbsmt"]
 shader = ExtResource("1_ibkli")
@@ -76,9 +80,17 @@ theme_override_constants/separation = 0
 [node name="GameInfo" type="PanelContainer" parent="Background/MarginContainer/InteriorBackGround/Rows"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_ibkli")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Background/MarginContainer/InteriorBackGround/Rows/GameInfo"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Background/MarginContainer/InteriorBackGround/Rows/GameInfo"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="HistoryRows" type="VBoxContainer" parent="Background/MarginContainer/InteriorBackGround/Rows/GameInfo/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Response" type="RichTextLabel" parent="Background/MarginContainer/InteriorBackGround/Rows/GameInfo/ScrollContainer/HistoryRows"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_cpr0p")
 bbcode_enabled = true
@@ -117,22 +129,39 @@ text = "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-
-fffffffffffffffffffffffffffffffffffff
-
-ssffsdf
-
-ffffffffffffffffffffffffffffffff
-
-sfsfsfsf"
-scroll_following = true
+"
+fit_content = true
+script = ExtResource("3_aug50")
 
 [node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/InteriorBackGround/Rows"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qbsmt")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/InteriorBackGround/Rows/InputArea"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/MarginContainer/InteriorBackGround/Rows/InputArea/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_78awf")
+theme_override_font_sizes/font_size = 25
+text = " > "
+
+[node name="Input" type="LineEdit" parent="Background/MarginContainer/InteriorBackGround/Rows/InputArea/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_cpr0p")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxFlat_s0nni")
+max_length = 140
+keep_editing_on_text_submit = true
+script = ExtResource("4_s0nni")
+
 [node name="ColorRect" type="ColorRect" parent="Background"]
 material = SubResource("ShaderMaterial_qbsmt")
 layout_mode = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+
+[connection signal="text_submitted" from="Background/MarginContainer/InteriorBackGround/Rows/InputArea/HBoxContainer/Input" to="." method="_on_input_text_submitted"]
+[connection signal="text_submitted" from="Background/MarginContainer/InteriorBackGround/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/InteriorBackGround/Rows/InputArea/HBoxContainer/Input" method="_on_text_submitted"]
