@@ -15,10 +15,6 @@ A personal, humble and little proyect about **retro‐style text RPG** built in 
   - `LineEdit` + ASCII cursor `_` that blinks and follows the input.  
   - “Typewriter” effect: responses appear character by character.
 
-- **Welcome ASCII Art**  
-  - Loaded from `res://ascii/welcome.txt` (or embedded).  
-  - Displayed on startup before any command.
-
 - **Command Menu & Flow**  
   - Console-only main menu (New Game, Load Game, Quit).  
   - Parser supporting commands like `look`, `go north`, `inventory`, `use [item]`.  
