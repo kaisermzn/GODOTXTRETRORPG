@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc3vbaqeqcdt0"]
+[gd_scene load_steps=14 format=3 uid="uid://dc3vbaqeqcdt0"]
 
-[ext_resource type="Shader" uid="uid://pljyetsoox3y" path="res://shaders/game.gdshader" id="1_ibkli"]
-[ext_resource type="Script" uid="uid://dynhy18lcq6rk" path="res://scripts/Game.gd" id="1_qbsmt"]
-[ext_resource type="PackedScene" uid="uid://72pjvl8yoio6" path="res://scenes/InputResponse.tscn" id="2_aug50"]
+[ext_resource type="Shader" uid="uid://pljyetsoox3y" path="res://Engine/EngineShaders/game.gdshader" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://dynhy18lcq6rk" path="res://Engine/EngineScripts/Game.gd" id="1_qbsmt"]
+[ext_resource type="PackedScene" uid="uid://72pjvl8yoio6" path="res://Engine/EngineScenes/InputResponse.tscn" id="2_aug50"]
 [ext_resource type="FontFile" uid="uid://jo7yyo1eunso" path="res://assets/fonts/CONSOLA.TTF" id="2_cpr0p"]
+[ext_resource type="Script" uid="uid://yg2js1mb26eq" path="res://Engine/EngineMainMenuCommands/ICommandMainMenu.gd" id="2_tddkg"]
+[ext_resource type="Script" uid="uid://b308rcr75nl3o" path="res://Engine/EngineAutoload/GameEngine.gd" id="3_6d1w4"]
 [ext_resource type="FontFile" uid="uid://typbdpur37en" path="res://assets/fonts/CONSOLAB.TTF" id="3_78awf"]
-[ext_resource type="Script" uid="uid://qt4ljccls1rt" path="res://scripts/Input.gd" id="4_s0nni"]
+[ext_resource type="Script" uid="uid://qt4ljccls1rt" path="res://Engine/EngineScripts/Input.gd" id="4_s0nni"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ve7bo"]
 bg_color = Color(0, 0, 0, 1)
@@ -52,6 +54,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qbsmt")
+
+[node name="ICommandMainMenu" type="Node" parent="."]
+script = ExtResource("2_tddkg")
+
+[node name="GameEngine" type="Node" parent="."]
+script = ExtResource("3_6d1w4")
 
 [node name="Background" type="PanelContainer" parent="."]
 layout_mode = 1
