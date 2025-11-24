@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://72pjvl8yoio6"]
 
 [ext_resource type="FontFile" uid="uid://jo7yyo1eunso" path="res://assets/fonts/CONSOLA.TTF" id="1_nxgtd"]
-[ext_resource type="Script" uid="uid://dwtx0t45yx1e8" path="res://scripts/Response.gd" id="2_upva6"]
+[ext_resource type="Script" uid="uid://dwtx0t45yx1e8" path="res://Engine/EngineScripts/Response.gd" id="2_upva6"]
 
 [node name="HistoryRows" type="VBoxContainer"]
 size_flags_horizontal = 3

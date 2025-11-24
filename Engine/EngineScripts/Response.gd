@@ -3,7 +3,7 @@ func set_InputResponsetext(input_text: String, response_text: String) -> void:
 	self.bbcode_enabled = false
 	self.newline()
 	if (input_text):
-		self.append_text("[b] > " + input_text + "[/b]")
+		self.append_text("[b] > " + input_text.to_upper() + "[/b]")
 	
 	if (response_text):
 		self.newline()
